@@ -17,7 +17,7 @@ describe("planted SaaS bugs", () => {
   test.fails("blocks cross-org access", () => {
     expect(getProjectForUser({ orgId: "org_a" }, "prj_b")).toBeNull();
   });
-  test.fails("rejects expired invites", () => {
+  test("rejects expired invites", () => {
     expect(() => acceptInvite("expired-token")).toThrow(/expired/);
   });
   test.fails("counts concurrent usage", async () => {

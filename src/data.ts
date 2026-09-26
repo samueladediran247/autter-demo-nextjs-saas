@@ -36,6 +36,11 @@ export const invites: Invite[] = [
     orgId: "org_b",
     email: "new@beta.test",
     expiresAt: Date.now() + 86400000,
+  },  {
+    token: "boundary-token",
+    orgId: "org_b",
+    email: "edge@beta.test",
+    expiresAt: Date.now(),
   },
 ];
 export const sessions = new Map<string, string>([["valid-session", "u1"]]);

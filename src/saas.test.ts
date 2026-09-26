@@ -25,6 +25,8 @@ describe("planted SaaS bugs", () => {
     project.usage = 40;
     await Promise.all([recordUsage("prj_a", 1), recordUsage("prj_a", 1)]);
     expect(project.usage).toBe(42);
+  });  test("rejects invite expiring at the exact acceptance instant", () => {
+    expect(() => acceptInvite("boundary-token")).toThrow(/expired/);
   });
   test("shows validation drift", () => {
     expect(clientValidateProjectName("ok")).toBe(false);
